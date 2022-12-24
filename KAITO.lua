@@ -10,7 +10,7 @@ while _G.loop do wait()
 for i,v in pairs(game:GetService("Workspace").Hoops:GetDescendants()) do
     if v.Name == "TouchInterest" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.2)
+wait(.3)
 end
 end
 end
@@ -33,9 +33,17 @@ while _G.Farm do wait()
 for i,v in pairs(game:GetService("Workspace").orbFolder.City:GetDescendants()) do
     if v.Name == "orbParticle" then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-wait(.2)
+wait(.3)
 end
 end
+end
+end)
+
+tab:Toggle("Auto Rebirths",false, function(Reb)
+_G.Rebirth = Reb
+while _G.Rebirth do wait()
+game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
+print("Reb")
 end
 end)
 
@@ -56,6 +64,5 @@ local ts = game:GetService("TeleportService")
 
 local p = game:GetService("Players").LocalPlayer
 
- 
 ts:Teleport(game.PlaceId, p)
 end)
