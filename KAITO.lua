@@ -43,7 +43,6 @@ tab:Toggle("Auto Rebirths",false, function(Reb)
 _G.Rebirth = Reb
 while _G.Rebirth do wait()
 game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
-print("Reb")
 end
 end)
 
